@@ -35,5 +35,11 @@ namespace CMPSAPP.Views
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
         }
+
+        async void OnStrainMonitorButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+        }
+
     }
 }
