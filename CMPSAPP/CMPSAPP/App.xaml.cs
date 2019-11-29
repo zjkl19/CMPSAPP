@@ -13,7 +13,8 @@ namespace CMPSAPP
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
+            DependencyService.Register<RealDataStore>();
             MainPage = new AppShell();
         }
 
