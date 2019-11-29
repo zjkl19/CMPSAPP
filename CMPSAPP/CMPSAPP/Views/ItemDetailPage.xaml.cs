@@ -28,8 +28,8 @@ namespace CMPSAPP.Views
 
             var item = new Item
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                Name = "Item 1",
+                ContractNo = "This is an item description."
             };
 
             viewModel = new ItemDetailViewModel(item);

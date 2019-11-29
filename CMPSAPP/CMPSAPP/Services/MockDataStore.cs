@@ -14,12 +14,12 @@ namespace CMPSAPP.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid(), Text = "Sixth item", Description="This is an item description." }
+                new Item { Id = Guid.NewGuid(), Name = "洪塘大桥", ContractNo="This is an item description." },
+                new Item { Id = Guid.NewGuid(), Name = "过溪桥", ContractNo="This is an item description." },
+                new Item { Id = Guid.NewGuid(), Name = "Third item", ContractNo="This is an item description." },
+                new Item { Id = Guid.NewGuid(), Name = "Fourth item", ContractNo="This is an item description." },
+                new Item { Id = Guid.NewGuid(), Name = "Fifth item", ContractNo="This is an item description." },
+                new Item { Id = Guid.NewGuid(), Name = "Sixth item", ContractNo="This is an item description." }
             };
         }
 
