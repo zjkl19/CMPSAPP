@@ -27,6 +27,10 @@
                         Clicked="OnCoordinateMonitorButton_Clicked" 
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
+        <Button Margin="0,10,0,0" Text="高程"
+                        Clicked="OnElevationMonitorButton_Clicked" 
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
     </StackLayout>
     
 </ContentPage>

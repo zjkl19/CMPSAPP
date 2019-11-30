@@ -46,5 +46,10 @@ namespace CMPSAPP.Views
             await Navigation.PushModalAsync(new NavigationPage(new CoordinateMonitorsPage()));
         }
 
+        async void OnElevationMonitorButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new ElevationMonitorsPage()));
+        }
+
     }
 }
