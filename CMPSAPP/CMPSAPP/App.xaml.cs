@@ -16,7 +16,8 @@ namespace CMPSAPP
             //DependencyService.Register<MockDataStore>();
             DependencyService.Register<RealDataStore>();
             DependencyService.Register<StrainMonitorsDataStore>();
-            
+            DependencyService.Register<CoordinateMonitorsDataStore>();
+
             MainPage = new AppShell();
         }
 

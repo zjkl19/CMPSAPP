@@ -41,5 +41,10 @@ namespace CMPSAPP.Views
             await Navigation.PushModalAsync(new NavigationPage(new StrainMonitorsPage()));
         }
 
+        async void OnCoordinateMonitorButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new CoordinateMonitorsPage()));
+        }
+
     }
 }
