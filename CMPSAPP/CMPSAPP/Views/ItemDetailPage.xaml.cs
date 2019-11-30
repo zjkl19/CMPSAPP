@@ -38,7 +38,7 @@ namespace CMPSAPP.Views
 
         async void OnStrainMonitorButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            await Navigation.PushModalAsync(new NavigationPage(new StrainMonitorsPage()));
         }
 
     }
