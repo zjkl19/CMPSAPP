@@ -4,7 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CMPSAPP.Views.StrainMonitorsPage">
+             x:Class="CMPSAPP.Views.StrainMonitorsPage"
+             Title="{Binding Title}">
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="返回" Clicked="Return_Clicked" />
     </ContentPage.ToolbarItems>
@@ -21,8 +23,15 @@
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">-->
             <ListView x:Name="StrainMonitorsListView"
+                      ItemsSource="{Binding Items}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      RefreshCommand="{Binding LoadItemsCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      CachingStrategy="RecycleElement"
                 >
-            <d:ListView.ItemsSource>
+                <d:ListView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>First Item</x:String>
                         <x:String>Second Item</x:String>
@@ -36,16 +45,16 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <!--<Label Text="{Binding Name}" 
+                                <Label Text="{Binding No}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                                <Label Text="{Binding ContractNo}" 
+                                <Label Text="{Binding Temperature}" 
                                 d:Text="Item description"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />-->
+                                FontSize="13" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

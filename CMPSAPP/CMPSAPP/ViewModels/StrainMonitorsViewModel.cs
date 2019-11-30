@@ -17,7 +17,7 @@ namespace CMPSAPP.ViewModels
 
         public StrainMonitorsViewModel()
         {
-            Title = "Browse";
+            Title = "StrainMonitors Browse";
             Items = new ObservableCollection<StrainMonitor>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

@@ -12,7 +12,7 @@ namespace CMPSAPP.ViewModels
 {
     public class StrainMonitorsBaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<StrainMonitor> DataStore => DependencyService.Get<IDataStore<StrainMonitor>>();
+        public IStrainMonitorsDataStore<StrainMonitor> DataStore => DependencyService.Get<IStrainMonitorsDataStore<StrainMonitor>>();
 
         bool isBusy = false;
         public bool IsBusy

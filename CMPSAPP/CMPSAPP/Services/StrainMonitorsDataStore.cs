@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CMPSAPP.Services
 {
-    public class StrainMonitorsDataStore : IStrainMonitorsStore<StrainMonitor>
+    public class StrainMonitorsDataStore : IStrainMonitorsDataStore<StrainMonitor>
     {
         readonly List<StrainMonitor> items;
 

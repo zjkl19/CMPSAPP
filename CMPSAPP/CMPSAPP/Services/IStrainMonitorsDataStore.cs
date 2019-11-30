@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CMPSAPP.Services
 {
-    public interface IStrainMonitorsStore<T>
+    public interface IStrainMonitorsDataStore<T>
     {
         Task<T> GetItemAsync(Guid id);
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);

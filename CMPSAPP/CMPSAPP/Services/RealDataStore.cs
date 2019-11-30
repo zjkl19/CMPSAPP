@@ -21,7 +21,7 @@ namespace CMPSAPP.Services
         {
             try
             {
-                client = new RestClient("http://192.168.1.108/");
+                client = new RestClient("http://192.168.1.107/");
                 request = new RestRequest("api/APICMProject", Method.GET);
                 var resp = client.Execute(request);
                 if (resp.StatusCode == HttpStatusCode.OK)
