@@ -31,5 +31,7 @@ namespace CMPSAPP.Models
         public string Comment { get; set; }
 
         public Guid ProcedureId { get; set; }
+
+        public Guid CMProjectId { get; set; }
     }
 }

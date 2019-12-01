@@ -15,10 +15,16 @@ namespace CMPSAPP.Views
     public partial class StrainMonitorsPage : ContentPage
     {
         StrainMonitorsViewModel viewModel;
-        public StrainMonitorsPage()
+        //public StrainMonitorsPage()
+        //{
+        //    InitializeComponent();
+        //    BindingContext = viewModel = new StrainMonitorsViewModel();
+        //}
+
+        public StrainMonitorsPage(Guid cmprojectId)
         {
             InitializeComponent();
-            BindingContext = viewModel = new StrainMonitorsViewModel();
+            BindingContext = viewModel = new StrainMonitorsViewModel(cmprojectId);
         }
 
         async void Return_Clicked(object sender, EventArgs e)
