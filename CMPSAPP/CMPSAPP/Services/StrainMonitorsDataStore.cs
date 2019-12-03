@@ -31,7 +31,7 @@ namespace CMPSAPP.Services
         {
             try
             {
-                client = new RestClient("http://192.168.1.107/");
+                client = new RestClient("http://218.66.5.89:8310/");
                 request = new RestRequest("api/APIStrainMonitor", Method.GET);
                 request.AddParameter("CMProjectId", Id);
                 var resp = client.Execute(request);
