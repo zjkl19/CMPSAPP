@@ -20,10 +20,10 @@ namespace CMPSAPP.Views
             BindingContext = viewModel = new ElevationMonitorsViewModel();
         }
 
-        async void Return_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopModalAsync();
-        }
+        //async void Return_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PopModalAsync();
+        //}
 
         protected override void OnAppearing()
         {

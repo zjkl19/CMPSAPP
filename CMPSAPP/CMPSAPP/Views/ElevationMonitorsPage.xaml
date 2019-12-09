@@ -6,12 +6,12 @@
              mc:Ignorable="d"
              x:Class="CMPSAPP.Views.ElevationMonitorsPage">
     
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="返回" Clicked="Return_Clicked" />
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="0, 50, 0, 0">
             <ListView x:Name="StrainMonitorsListView"
                       ItemsSource="{Binding Items}"
                       VerticalOptions="FillAndExpand"

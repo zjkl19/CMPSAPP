@@ -27,10 +27,10 @@ namespace CMPSAPP.Views
             BindingContext = viewModel = new StrainMonitorsViewModel(cmprojectId);
         }
 
-        async void Return_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopModalAsync();
-        }
+        //async void Return_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PopModalAsync();
+        //}
 
         protected override void OnAppearing()
         {
