@@ -29,7 +29,7 @@ namespace CMPSAPP.Services
         {
             try
             {
-                client = new RestClient("http://218.66.5.89:8310/");
+                client = new RestClient(App.ServerURL);
                 request = new RestRequest("api/APICoordinateMonitor", Method.GET);
                 request.AddParameter("CMProjectId", Id);
                 var resp = client.Execute(request);

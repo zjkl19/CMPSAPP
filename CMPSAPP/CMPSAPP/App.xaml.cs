@@ -8,7 +8,7 @@ namespace CMPSAPP
 {
     public partial class App : Application
     {
-
+        public static readonly string ServerURL = @"http://218.66.5.89:8310/";
         public App()
         {
             InitializeComponent();
