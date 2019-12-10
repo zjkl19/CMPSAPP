@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CMPSAPP.Services
 {
-    public class StrainMonitorsDataStore : IStrainMonitorsDataStore<StrainMonitor>
+    public class StrainMonitorsDataStore : IMonitorsDataStore<StrainMonitor>
     {
         List<StrainMonitor> items;
 

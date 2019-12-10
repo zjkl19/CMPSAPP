@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace CMPSAPP.ViewModels
 {
-    public class StrainMonitorsViewModel : StrainMonitorsBaseViewModel
+    public class StrainMonitorsViewModel : MonitorsBaseViewModel<StrainMonitor>
     {
         public ObservableCollection<StrainMonitor> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
