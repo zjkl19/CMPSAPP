@@ -31,7 +31,7 @@ namespace CMPSAPP.ViewModels
 
         public CoordinateMonitorsViewModel(Guid Id)
         {
-            Title = "查看应变";
+            Title = "查看坐标";
             Items = new ObservableCollection<CoordinateMonitor>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand(Id));
 

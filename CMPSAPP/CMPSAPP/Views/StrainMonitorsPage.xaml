@@ -50,6 +50,11 @@
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
+                                <Label Text="{Binding StrainValue}" 
+                                d:Text="Item description"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
                                 <Label Text="{Binding Temperature}" 
                                 d:Text="Item description"
                                 LineBreakMode="NoWrap"

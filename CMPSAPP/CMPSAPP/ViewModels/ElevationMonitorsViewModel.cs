@@ -17,7 +17,7 @@ namespace CMPSAPP.ViewModels
 
         public ElevationMonitorsViewModel()
         {
-            Title = "ElevationMonitors Browse";
+            Title = "查看高程";
             Items = new ObservableCollection<ElevationMonitor>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

@@ -9,7 +9,7 @@ namespace CMPSAPP.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "关于";
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("http://www.fjjky.com")));
         }
