@@ -1,7 +1,10 @@
 ﻿using CMPSAPP.Models;
+using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +12,9 @@ namespace CMPSAPP.Services
 {
     public class CoordinateMonitorsDataStore : IMonitorsDataStore<CoordinateMonitor>
     {
-        readonly List<CoordinateMonitor> items;
+        List<CoordinateMonitor> items;
+        RestClient client;
+        RestRequest request;
 
         public CoordinateMonitorsDataStore()
         {
@@ -20,14 +25,49 @@ namespace CMPSAPP.Services
             };
         }
 
+        public List<CoordinateMonitor> GetCoordinateMonitorsDataByCMProjectId(Guid Id)
+        {
+            try
+            {
+                client = new RestClient("http://218.66.5.89:8310/");
+                request = new RestRequest("api/APICoordinateMonitor", Method.GET);
+                request.AddParameter("CMProjectId", Id);
+                var resp = client.Execute(request);
+                if (resp.StatusCode == HttpStatusCode.OK)
+                {
+                    var v = resp.Content;
+                    items = JsonConvert.DeserializeObject<List<CoordinateMonitor>>(v);
+                }
+                else
+                {
+                    items = new List<CoordinateMonitor>()
+                    {
+                        new CoordinateMonitor { Id = Guid.NewGuid(), No="Z11mock",ZValue=Convert.ToDecimal(19.61),Temperature=Convert.ToDecimal(20.01) },
+                        new CoordinateMonitor { Id = Guid.NewGuid(), No="Z12mock",ZValue=Convert.ToDecimal(13.16),Temperature=Convert.ToDecimal(21.32) },
+                    };
+                }
+
+            }
+            catch (Exception)
+            {
+
+                items = new List<CoordinateMonitor>()
+                {
+                       new CoordinateMonitor { Id = Guid.NewGuid(), No="Z11throw",ZValue=Convert.ToDecimal(19.61),Temperature=Convert.ToDecimal(20.01) },
+                       new CoordinateMonitor { Id = Guid.NewGuid(), No="Z12throw",ZValue=Convert.ToDecimal(13.16),Temperature=Convert.ToDecimal(21.32) },                
+                };
+            }
+            return items;
+        }
+
         public async Task<CoordinateMonitor> GetItemAsync(Guid id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<CoordinateMonitor>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<CoordinateMonitor>> GetItemsAsync(Guid cmprojectId, bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(GetCoordinateMonitorsDataByCMProjectId(cmprojectId));
         }
     }
 }

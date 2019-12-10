@@ -15,11 +15,25 @@ namespace CMPSAPP.ViewModels
         public ObservableCollection<CoordinateMonitor> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public CoordinateMonitorsViewModel()
+        //public CoordinateMonitorsViewModel()
+        //{
+        //    Title = "CoordinateMonitors Browse";
+        //    Items = new ObservableCollection<CoordinateMonitor>();
+        //    LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+
+        //    //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+        //    //{
+        //    //    var newItem = item as Item;
+        //    //    Items.Add(newItem);
+        //    //    await DataStore.AddItemAsync(newItem);
+        //    //});
+        //}
+
+        public CoordinateMonitorsViewModel(Guid Id)
         {
-            Title = "CoordinateMonitors Browse";
+            Title = "查看应变";
             Items = new ObservableCollection<CoordinateMonitor>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand(Id));
 
             //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             //{
@@ -29,7 +43,7 @@ namespace CMPSAPP.ViewModels
             //});
         }
 
-        async Task ExecuteLoadItemsCommand()
+        async Task ExecuteLoadItemsCommand(Guid Id)
         {
             if (IsBusy)
                 return;
@@ -39,7 +53,7 @@ namespace CMPSAPP.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await DataStore.GetItemsAsync(Id,true);
                 foreach (var item in items)
                 {
                     Items.Add(item);

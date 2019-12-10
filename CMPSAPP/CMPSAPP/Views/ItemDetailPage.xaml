@@ -26,10 +26,12 @@
                         TextColor="White" />
         <Button Margin="0,10,0,0" Text="坐标"
                         Clicked="OnCoordinateMonitorButton_Clicked"
+                        CommandParameter="{Binding Item.Id}"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
         <Button Margin="0,10,0,0" Text="高程"
-                        Clicked="OnElevationMonitorButton_Clicked" 
+                        Clicked="OnElevationMonitorButton_Clicked"
+                        CommandParameter="{Binding Item.Id}"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
     </StackLayout>

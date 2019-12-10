@@ -14,10 +14,16 @@ namespace CMPSAPP.Views
     public partial class CoordinateMonitorsPage : ContentPage
     {
         CoordinateMonitorsViewModel viewModel;
-        public CoordinateMonitorsPage()
+        //public CoordinateMonitorsPage()
+        //{
+        //    InitializeComponent();
+        //    BindingContext = viewModel = new CoordinateMonitorsViewModel();
+        //}
+
+        public CoordinateMonitorsPage(Guid cmprojectId)
         {
             InitializeComponent();
-            BindingContext = viewModel = new CoordinateMonitorsViewModel();
+            BindingContext = viewModel = new CoordinateMonitorsViewModel(cmprojectId);
         }
 
         //async void Return_Clicked(object sender, EventArgs e)

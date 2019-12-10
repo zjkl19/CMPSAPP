@@ -8,6 +8,6 @@ namespace CMPSAPP.Services
     public interface IMonitorsDataStore<T>
     {
         Task<T> GetItemAsync(Guid id);
-        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+        Task<IEnumerable<T>> GetItemsAsync(Guid cmprojectId, bool forceRefresh = false);
     }
 }

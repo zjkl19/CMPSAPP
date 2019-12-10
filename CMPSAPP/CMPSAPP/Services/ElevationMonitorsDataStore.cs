@@ -25,7 +25,7 @@ namespace CMPSAPP.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<ElevationMonitor>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<ElevationMonitor>> GetItemsAsync(Guid cmprojectId, bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }
