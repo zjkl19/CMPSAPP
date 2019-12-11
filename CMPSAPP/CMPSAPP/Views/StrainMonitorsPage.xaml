@@ -6,10 +6,17 @@
              mc:Ignorable="d"
              x:Class="CMPSAPP.Views.StrainMonitorsPage"
              Title="{Binding Title}">
-    
+
     <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="返回" Clicked="Return_Clicked" />
     </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="dataSize">13</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
 
     <ContentPage.Content>
         <StackLayout Padding="0, 50, 0, 0">
@@ -45,21 +52,29 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding No}" 
-                                d:Text="{Binding .}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                                <Label Text="{Binding StrainValue}" 
-                                d:Text="Item description"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                                <Label Text="{Binding Temperature}" 
-                                d:Text="Item description"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+                                <!--<StackLayout Orientation="Horizontal">-->
+                                <!--<Label Text="测点编号"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="16" />-->
+                                <Label Text="{Binding No,StringFormat='测点编号 {0}'}" 
+                                    d:Text="{Binding .}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="16" />
+                                <!--</StackLayout>-->
+                                <Label Text="{Binding StrainValue,StringFormat='应变测值 {0}'}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="{StaticResource dataSize}" />
+                                <Label Text="{Binding Temperature,StringFormat='温度 {0}'}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="{StaticResource dataSize}" />
+                                <Label Text="{Binding MonitorTime,StringFormat='监测时间 {0}'}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="{StaticResource dataSize}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
