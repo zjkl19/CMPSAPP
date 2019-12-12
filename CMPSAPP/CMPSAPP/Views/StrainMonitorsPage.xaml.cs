@@ -32,6 +32,13 @@ namespace CMPSAPP.Views
         //    await Navigation.PopModalAsync();
         //}
 
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+
+            await Navigation.PushAsync(new StrainMonitorsChartPage());
+
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
