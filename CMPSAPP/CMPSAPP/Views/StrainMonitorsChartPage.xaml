@@ -14,12 +14,12 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="时程曲线"
+            <Label Text="单点时程曲线"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <microcharts:ChartView 
                 x:Name="chartView"
-                Chart="{Binding Chart1}"
+                Chart="{Binding SinglePointTimeHistoryChart}"
                 HeightRequest="200" />
         </StackLayout>
     </ContentPage.Content>

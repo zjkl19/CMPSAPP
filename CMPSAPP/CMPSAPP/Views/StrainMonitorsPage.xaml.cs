@@ -1,4 +1,5 @@
-﻿using CMPSAPP.ViewModels;
+﻿using CMPSAPP.Models;
+using CMPSAPP.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,9 +35,11 @@ namespace CMPSAPP.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-
-            await Navigation.PushAsync(new StrainMonitorsChartPage());
-
+            var item = args.SelectedItem as StrainMonitor;
+            if (item == null)
+                return;
+            await Navigation.PushAsync(new StrainMonitorsChartPage(new StrainMonitorsChartViewModel(item)));
+            
         }
 
         protected override void OnAppearing()

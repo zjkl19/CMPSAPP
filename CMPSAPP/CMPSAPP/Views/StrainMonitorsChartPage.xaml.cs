@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMPSAPP.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace CMPSAPP.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StrainMonitorsChartPage : ContentPage
     {
-        public StrainMonitorsChartPage()
+        StrainMonitorsChartViewModel viewModel;
+
+        public StrainMonitorsChartPage(StrainMonitorsChartViewModel viewModel)
         {
             InitializeComponent();
+            BindingContext = this.viewModel = viewModel;
         }
     }
 }
