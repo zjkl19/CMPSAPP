@@ -5,12 +5,13 @@ using Xamarin.Forms;
 using Entry = Microcharts.Entry;
 using SkiaSharp;
 using Microcharts;
+using System.Collections.Generic;
 
 namespace CMPSAPP.ViewModels
 {
     public class ExtraViewModel : BaseViewModel
     {
-        public Entry[] Entries;
+        public IEnumerable<Entry> Entries;
         public ExtraViewModel()
         {
             Title = "关于";

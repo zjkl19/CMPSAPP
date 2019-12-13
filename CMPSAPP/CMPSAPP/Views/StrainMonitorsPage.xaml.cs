@@ -38,7 +38,7 @@ namespace CMPSAPP.Views
             var item = args.SelectedItem as StrainMonitor;
             if (item == null)
                 return;
-            await Navigation.PushAsync(new StrainMonitorsChartPage(new StrainMonitorsChartViewModel(item)));
+            await Navigation.PushAsync(new StrainMonitorsChartPage(new StrainMonitorsChartViewModel(item.Id)));
             
         }
 

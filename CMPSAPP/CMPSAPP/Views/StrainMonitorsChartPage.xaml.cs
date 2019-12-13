@@ -20,5 +20,13 @@ namespace CMPSAPP.Views
             InitializeComponent();
             BindingContext = this.viewModel = viewModel;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (viewModel.Items.Count == 0)
+                viewModel.LoadItemsCommand.Execute(null);
+        }
     }
 }

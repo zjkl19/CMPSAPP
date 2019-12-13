@@ -9,13 +9,17 @@ namespace CMPSAPP
     public partial class App : Application
     {
         public static readonly string ServerURL = @"http://218.66.5.89:8310/";
+        //public static readonly string ServerURL = @"http://192.168.1.107/";
         public App()
         {
             InitializeComponent();
 
             //DependencyService.Register<MockDataStore>();
             DependencyService.Register<RealDataStore>();
+
             DependencyService.Register<StrainMonitorsDataStore>();
+            DependencyService.Register<StrainMonitorsChartDataStore>();
+
             DependencyService.Register<CoordinateMonitorsDataStore>();
             DependencyService.Register<ElevationMonitorsDataStore>();
 
