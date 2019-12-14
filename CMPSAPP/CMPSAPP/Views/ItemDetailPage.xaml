@@ -16,9 +16,10 @@
     
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Name}" d:Text="Item name" FontSize="Small"/>
-        <Label Text="合同编号:" FontSize="Medium" />
-        <Label Text="{Binding Item.ContractNo}" d:Text="Item description" FontSize="Small"/>
+        <!--<Label Text="{Binding Item.Name}" d:Text="Item name" FontSize="Small"/>-->
+        <Label Text="{Binding Item.ContractNo,StringFormat='合同编号 {0}'}" d:Text="Item description" FontSize="Small"/>
+        <Label Text="{Binding Item.EnterDateTime,StringFormat='进场时间 {0:yyyy/MM/dd}'}" d:Text="Item description" FontSize="Small"/>
+        <Label Text="{Binding Item.ResponseStaffName,StringFormat='负责人 {0}'}" d:Text="Item description" FontSize="Small"/>
         <Button Margin="0,10,0,0" Text="应变"
                         Clicked="OnStrainMonitorButton_Clicked"
                         CommandParameter="{Binding Item.Id}"

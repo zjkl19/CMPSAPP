@@ -53,17 +53,11 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <!--<StackLayout Orientation="Horizontal">-->
-                                <!--<Label Text="测点编号"
-                                    LineBreakMode="NoWrap" 
-                                    Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="16" />-->
                                 <Label Text="{Binding No,StringFormat='测点编号 {0}'}" 
                                     d:Text="{Binding .}"
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="16" />
-                                <!--</StackLayout>-->
                                 <Label Text="{Binding StrainValue,StringFormat='应变测值 {0}'}"
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
