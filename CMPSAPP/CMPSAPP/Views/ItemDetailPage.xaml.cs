@@ -41,14 +41,14 @@ namespace CMPSAPP.Views
 
             var thisClickedButton = sender as Button;
             var cmprojectId = (Guid)thisClickedButton.CommandParameter;
-            await Navigation.PushAsync(new StrainMonitorsPage(cmprojectId));
+            await Navigation.PushAsync(new StrainMonitorsPage(new StrainMonitorsViewModel(cmprojectId)));
         }
 
         async void OnCoordinateMonitorButton_Clicked(object sender, EventArgs e)
         {
             var thisClickedButton = sender as Button;
             var cmprojectId = (Guid)thisClickedButton.CommandParameter;
-            await Navigation.PushAsync(new CoordinateMonitorsPage(cmprojectId));
+            await Navigation.PushAsync(new CoordinateMonitorsPage(new CoordinateMonitorsViewModel(cmprojectId)));
         }
 
         async void OnElevationMonitorButton_Clicked(object sender, EventArgs e)

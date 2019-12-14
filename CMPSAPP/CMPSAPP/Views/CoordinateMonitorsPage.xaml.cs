@@ -20,10 +20,10 @@ namespace CMPSAPP.Views
         //    BindingContext = viewModel = new CoordinateMonitorsViewModel();
         //}
 
-        public CoordinateMonitorsPage(Guid cmprojectId)
+        public CoordinateMonitorsPage(CoordinateMonitorsViewModel viewModel)
         {
             InitializeComponent();
-            BindingContext = viewModel = new CoordinateMonitorsViewModel(cmprojectId);
+            BindingContext = this.viewModel = viewModel;
         }
 
         //async void Return_Clicked(object sender, EventArgs e)

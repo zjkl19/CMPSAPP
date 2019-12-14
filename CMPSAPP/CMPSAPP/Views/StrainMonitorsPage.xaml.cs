@@ -22,16 +22,18 @@ namespace CMPSAPP.Views
         //    BindingContext = viewModel = new StrainMonitorsViewModel();
         //}
 
-        public StrainMonitorsPage(Guid cmprojectId)
+        //public StrainMonitorsPage(Guid cmprojectId)
+        //{
+        //    InitializeComponent();
+        //    BindingContext = viewModel = new StrainMonitorsViewModel(cmprojectId);
+        //}
+
+        public StrainMonitorsPage(StrainMonitorsViewModel viewModel)
         {
             InitializeComponent();
-            BindingContext = viewModel = new StrainMonitorsViewModel(cmprojectId);
+            BindingContext = this.viewModel = viewModel;
         }
 
-        //async void Return_Clicked(object sender, EventArgs e)
-        //{
-        //    await Navigation.PopModalAsync();
-        //}
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
