@@ -21,8 +21,8 @@ namespace CMPSAPP.Services
         {
             try
             {
-                client = new RestClient("http://218.66.5.89:8310/");
-                request = new RestRequest("api/APICMProject", Method.GET);
+                client = new RestClient(App.ServerURL);
+                request = new RestRequest("api/CMProject", Method.GET);
                 var resp = client.Execute(request);
                 if (resp.StatusCode == HttpStatusCode.OK)
                 {

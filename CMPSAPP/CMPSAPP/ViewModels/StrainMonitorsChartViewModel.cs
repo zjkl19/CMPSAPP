@@ -76,7 +76,7 @@ namespace CMPSAPP.ViewModels
             try
             {
                 client = new RestClient(App.ServerURL);
-                request = new RestRequest("api/APIStrainMonitorsChart", Method.GET);
+                request = new RestRequest("api/StrainMonitorsChart", Method.GET);
                 request.AddParameter("Id", Id);
                 var resp = client.Execute(request);
                 if (resp.StatusCode == HttpStatusCode.OK)

@@ -30,7 +30,7 @@ namespace CMPSAPP.Services
             try
             {
                 client = new RestClient(App.ServerURL);
-                request = new RestRequest("api/APICoordinateMonitor", Method.GET);
+                request = new RestRequest("api/CoordinateMonitor", Method.GET);
                 request.AddParameter("CMProjectId", Id);
                 var resp = client.Execute(request);
                 if (resp.StatusCode == HttpStatusCode.OK)
