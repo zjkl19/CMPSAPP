@@ -7,7 +7,8 @@
              x:Class="CMPSAPP.Views.ItemsPage"
              Title="{Binding Title}"
              x:Name="BrowseItemsPage"
-             xmlns:cvt="clr-namespace:CMPSAPP.MyConverters">
+             xmlns:cvt="clr-namespace:CMPSAPP.MyConverters"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
 
     <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
@@ -40,30 +41,36 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="10">
-                            <!--<ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                                <Image Source="jkyLogo.jpg"/>
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            <!--<ContentView Padding="10" VerticalOptions="FillAndExpand">
+                                <Image Source="jkyLogo.png" WidthRequest="55" HeightRequest="55"/>
                             </ContentView>-->
-                            <Label Text="{Binding Name}" 
+                            <ff:CachedImage Source="{Binding ElevationPhoto}" WidthRequest="85" HeightRequest="85">
+                            </ff:CachedImage>
+                            <StackLayout >
+                                <Label Text="{Binding Name}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                            <Label Text="{Binding EngineeringStatus,StringFormat='工程状态 {0}', Converter={StaticResource EngineeringStatusConverter}}" 
+                                <Label Text="{Binding EngineeringStatus,StringFormat='工程状态 {0}', Converter={StaticResource EngineeringStatusConverter}}" 
                                 d:Text="Item description"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                            <Label Text="{Binding EnterDateTime,StringFormat='进场时间 {0:yyyy/MM/dd}'}" 
+                                <Label Text="{Binding EnterDateTime,StringFormat='进场时间 {0:yyyy/MM/dd}'}" 
                                 d:Text="Item description"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                            <Label Text="{Binding ResponseStaffName,StringFormat='负责人 {0}'}" 
+                                <Label Text="{Binding ResponseStaffName,StringFormat='负责人 {0}'}" 
                                 d:Text="Item description"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
+                            </StackLayout>
+
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

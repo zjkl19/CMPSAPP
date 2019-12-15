@@ -12,6 +12,8 @@ namespace CMPSAPP.Models
         //[Display(Name = "关联合同编号")]
         public string ContractNo { get; set; }
 
+        public string ElevationPhoto { get; set; }
+
         //[Display(Name = "工程状态")]
         public EngineeringStatus EngineeringStatus { get; set; }
 

@@ -42,6 +42,7 @@ namespace CMPSAPP.ViewModels
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
+                    item.ElevationPhoto = $"http://218.66.5.89:8310/upload/{item.Name}.png";
                     Items.Add(item);
                 }
             }
