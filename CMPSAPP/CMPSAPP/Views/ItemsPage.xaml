@@ -6,11 +6,15 @@
              mc:Ignorable="d"
              x:Class="CMPSAPP.Views.ItemsPage"
              Title="{Binding Title}"
-             x:Name="BrowseItemsPage">
+             x:Name="BrowseItemsPage"
+             xmlns:cvt="clr-namespace:CMPSAPP.MyConverters">
 
     <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>-->
+    <ContentPage.Resources>
+        <cvt:EngineeringStatusConverter x:Key="EngineeringStatusConverter" />
+    </ContentPage.Resources>
 
     <StackLayout>
         <ListView x:Name="ItemsListView"
@@ -41,6 +45,11 @@
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
+                            <Label Text="{Binding EngineeringStatus,StringFormat='工程状态 {0}', Converter={StaticResource EngineeringStatusConverter}}" 
+                                d:Text="Item description"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
                             <Label Text="{Binding EnterDateTime,StringFormat='进场时间 {0:yyyy/MM/dd}'}" 
                                 d:Text="Item description"
                                 LineBreakMode="NoWrap"

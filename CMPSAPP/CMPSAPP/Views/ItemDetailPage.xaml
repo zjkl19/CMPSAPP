@@ -5,12 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CMPSAPP.Views.ItemDetailPage"
+             xmlns:cvt="clr-namespace:CMPSAPP.MyConverters"
              Title="{Binding Title}">
     
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
             <Color x:Key="LightTextColor">#999999</Color>
+            <cvt:EngineeringStatusConverter x:Key="EngineeringStatusConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -18,6 +20,9 @@
         <Label Text="Text:" FontSize="Medium" />
         <!--<Label Text="{Binding Item.Name}" d:Text="Item name" FontSize="Small"/>-->
         <Label Text="{Binding Item.ContractNo,StringFormat='合同编号 {0}'}" d:Text="Item description" FontSize="Small"/>
+        <Label Text="{Binding Item.EngineeringStatus,StringFormat='工程状态 {0}', Converter={StaticResource EngineeringStatusConverter}}" 
+                                d:Text="Item description"
+                                FontSize="Small" />
         <Label Text="{Binding Item.EnterDateTime,StringFormat='进场时间 {0:yyyy/MM/dd}'}" d:Text="Item description" FontSize="Small"/>
         <Label Text="{Binding Item.ResponseStaffName,StringFormat='负责人 {0}'}" d:Text="Item description" FontSize="Small"/>
         <Button Margin="0,10,0,0" Text="应变"

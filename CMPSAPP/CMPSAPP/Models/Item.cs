@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CMPSAPP.Models
 {
@@ -29,11 +30,11 @@ namespace CMPSAPP.Models
 
     public enum EngineeringStatus
     {
-        //[Display(Name = "开工")]
+        [Display(Name = "开工")]
         workstart = 1,
-        //[Display(Name = "停工")]
+        [Display(Name = "停工")]
         workstop = 2,
-        //[Display(Name = "竣工")]
+        [Display(Name = "竣工")]
         completed = 3,
 
     }
