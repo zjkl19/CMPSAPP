@@ -13,6 +13,7 @@
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>-->
     <ContentPage.Resources>
+        <Color x:Key="Accent">#96d1ff</Color>
         <cvt:EngineeringStatusConverter x:Key="EngineeringStatusConverter" />
     </ContentPage.Resources>
 
@@ -40,6 +41,9 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
+                            <!--<ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                                <Image Source="jkyLogo.jpg"/>
+                            </ContentView>-->
                             <Label Text="{Binding Name}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 

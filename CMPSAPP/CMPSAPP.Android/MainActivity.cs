@@ -16,7 +16,7 @@ namespace CMPSAPP.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer:true);
             base.OnCreate(savedInstanceState);
 
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");

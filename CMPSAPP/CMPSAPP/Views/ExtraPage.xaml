@@ -8,7 +8,10 @@
              xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              
              x:Class="CMPSAPP.Views.ExtraPage"
-             xmlns:vm="clr-namespace:CMPSAPP.ViewModels">
+             xmlns:vm="clr-namespace:CMPSAPP.ViewModels"
+             
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             >
     
     <ContentPage.BindingContext>
         <vm:ExtraViewModel />
@@ -16,7 +19,10 @@
     
     <ContentPage.Content>
         <StackLayout>
-
+            <ff:CachedImage Source="resource://CMPSAPP.jkyLogo.jpg">
+            </ff:CachedImage>
+            <!--<ff:CachedImage Source="http://218.66.5.89:8310/upload/image/20190714/6369873896757111911122189.png">
+            </ff:CachedImage>-->
             <microcharts:ChartView 
                 x:Name="chartView"
                 Chart="{Binding Chart1}"
