@@ -65,5 +65,12 @@ namespace CMPSAPP.Views
             await Navigation.PushAsync(new LeanMonitorsPage(new LeanMonitorsViewModel(cmprojectId)));
         }
 
+        async void OnCableForceMonitorButton_Clicked(object sender, EventArgs e)
+        {
+            var thisClickedButton = sender as Button;
+            var cmprojectId = (Guid)thisClickedButton.CommandParameter;
+            await Navigation.PushAsync(new CableForceMonitorsPage(new CableForceMonitorsViewModel(cmprojectId)));
+        }
+
     }
 }

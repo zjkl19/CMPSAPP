@@ -37,7 +37,7 @@
         <Tab Title="关于" Icon="tab_about.png">
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
         </Tab>
-        <Tab Title="其它" Icon="tab_about.png">
+        <Tab Title="测试" Icon="tab_about.png">
             <ShellContent ContentTemplate="{DataTemplate local:ExtraPage}" />
         </Tab>
     </TabBar>
