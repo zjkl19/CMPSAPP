@@ -4,11 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CMPSAPP.Views.ElevationMonitorsPage">
-    
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="返回" Clicked="Return_Clicked" />
-    </ContentPage.ToolbarItems>-->
+             x:Class="CMPSAPP.Views.ElevationMonitorsPage"
+             Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="dataSize">13</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.Content>
         <StackLayout Padding="0, 50, 0, 0">
@@ -35,16 +38,23 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding No}" 
-                                d:Text="{Binding .}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                                <Label Text="{Binding ElevationValue}" 
-                                d:Text="Item description"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+                                <Label Text="{Binding No,StringFormat='测点编号 {0}'}" 
+                                    d:Text="{Binding .}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="16" />
+                                <Label Text="{Binding ElevationValue,StringFormat='测值 {0}'}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="{StaticResource dataSize}" />
+                                <Label Text="{Binding Temperature,StringFormat='温度 {0}'}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="{StaticResource dataSize}" />
+                                <Label Text="{Binding MonitorTime,StringFormat='监测时间 {0}'}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="{StaticResource dataSize}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

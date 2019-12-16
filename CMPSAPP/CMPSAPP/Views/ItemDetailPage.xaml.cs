@@ -53,7 +53,9 @@ namespace CMPSAPP.Views
 
         async void OnElevationMonitorButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ElevationMonitorsPage());
+            var thisClickedButton = sender as Button;
+            var cmprojectId = (Guid)thisClickedButton.CommandParameter;
+            await Navigation.PushAsync(new ElevationMonitorsPage(new ElevationMonitorsViewModel(cmprojectId)));
         }
 
     }

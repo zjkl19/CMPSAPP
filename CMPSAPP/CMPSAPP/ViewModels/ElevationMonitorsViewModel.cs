@@ -15,11 +15,11 @@ namespace CMPSAPP.ViewModels
         public ObservableCollection<ElevationMonitor> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ElevationMonitorsViewModel()
+        public ElevationMonitorsViewModel(Guid Id)
         {
             Title = "查看高程";
             Items = new ObservableCollection<ElevationMonitor>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand(Id));
 
             //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             //{
@@ -29,7 +29,7 @@ namespace CMPSAPP.ViewModels
             //});
         }
 
-        async Task ExecuteLoadItemsCommand()
+        async Task ExecuteLoadItemsCommand(Guid Id)
         {
             if (IsBusy)
                 return;
@@ -39,7 +39,7 @@ namespace CMPSAPP.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(new Guid(),true);
+                var items = await DataStore.GetItemsAsync(Id,true);
                 foreach (var item in items)
                 {
                     Items.Add(item);

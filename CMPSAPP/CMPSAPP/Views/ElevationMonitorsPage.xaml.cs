@@ -14,10 +14,10 @@ namespace CMPSAPP.Views
     public partial class ElevationMonitorsPage : ContentPage
     {
         ElevationMonitorsViewModel viewModel;
-        public ElevationMonitorsPage()
+        public ElevationMonitorsPage(ElevationMonitorsViewModel viewModel)
         {
             InitializeComponent();
-            BindingContext = viewModel = new ElevationMonitorsViewModel();
+            BindingContext = this.viewModel = viewModel;
         }
 
         //async void Return_Clicked(object sender, EventArgs e)
