@@ -54,17 +54,17 @@
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
                                 <Label Text="{Binding EngineeringStatus,StringFormat='工程状态 {0}', Converter={StaticResource EngineeringStatusConverter}}" 
-                                d:Text="Item description"
+                                d:Text="Item EngineeringStatus"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
                                 <Label Text="{Binding EnterDateTime,StringFormat='进场时间 {0:yyyy/MM/dd}'}" 
-                                d:Text="Item description"
+                                d:Text="Item EnterDateTime"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
                                 <Label Text="{Binding ResponseStaffName,StringFormat='负责人 {0}'}" 
-                                d:Text="Item description"
+                                d:Text="Item ResponseStaffName"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
