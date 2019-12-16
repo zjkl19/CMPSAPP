@@ -40,6 +40,11 @@
                         CommandParameter="{Binding Item.Id}"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
+        <Button Margin="0,10,0,0" Text="倾角"
+                        Clicked="OnLeanMonitorButton_Clicked"
+                        CommandParameter="{Binding Item.Id}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
     </StackLayout>
     
 </ContentPage>

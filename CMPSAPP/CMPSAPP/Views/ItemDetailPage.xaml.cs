@@ -58,5 +58,12 @@ namespace CMPSAPP.Views
             await Navigation.PushAsync(new ElevationMonitorsPage(new ElevationMonitorsViewModel(cmprojectId)));
         }
 
+        async void OnLeanMonitorButton_Clicked(object sender, EventArgs e)
+        {
+            var thisClickedButton = sender as Button;
+            var cmprojectId = (Guid)thisClickedButton.CommandParameter;
+            await Navigation.PushAsync(new LeanMonitorsPage(new LeanMonitorsViewModel(cmprojectId)));
+        }
+
     }
 }

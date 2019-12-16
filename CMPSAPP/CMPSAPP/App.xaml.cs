@@ -22,6 +22,7 @@ namespace CMPSAPP
 
             DependencyService.Register<CoordinateMonitorsDataStore>();
             DependencyService.Register<ElevationMonitorsDataStore>();
+            DependencyService.Register<LeanMonitorsDataStore>();
 
             MainPage = new AppShell();
         }
