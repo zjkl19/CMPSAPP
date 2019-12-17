@@ -14,11 +14,15 @@ using RestSharp;
 using System.Net;
 using Newtonsoft.Json;
 using System.Linq;
+using OxyPlot;
+using OxyPlot.Series;
+using OxyPlot.Axes;
 
 namespace CMPSAPP.ViewModels
 {
     public class StrainMonitorsChartViewModel : MonitorsBaseViewModel<StrainMonitorsChart>
     {
+        public PlotModel LineModel { get; set; }
         //public ObservableCollection<StrainMonitorsChart> Items { get; set; }
         public List<StrainMonitorsChart> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
@@ -122,6 +126,55 @@ namespace CMPSAPP.ViewModels
 
             Entries = lst.AsQueryable();
 
+            LineModel = CreateLineChart(Items);
+
+            var leftAxis = new LinearAxis()
+            {
+                Position = AxisPosition.Left,
+                Title = "应变",//显示标题内容
+                //TitlePosition = 1,//显示标题位置
+
+            };
+
+            var bottomAxis = new DateTimeAxis()
+            {
+
+                Position = AxisPosition.Bottom,
+                StringFormat = "yyyy-MM-dd hh:mm",
+                //Minimum = DateTimeAxis.ToDouble(DateTime.Now),
+                //Maximum = DateTimeAxis.ToDouble(DateTime.Now.AddMinutes(1)),
+                Title = "时间",
+                //TitlePosition = 0,
+                IntervalLength = 60,
+                MinorIntervalType = DateTimeIntervalType.Seconds,
+                IntervalType = DateTimeIntervalType.Seconds,
+                MajorGridlineStyle = LineStyle.Solid,
+                MinorGridlineStyle = LineStyle.None,
+            };
+            LineModel.Axes.Add(leftAxis);
+            LineModel.Axes.Add(bottomAxis);
+
+        }
+
+        private PlotModel CreateLineChart(List<StrainMonitorsChart> items)
+        {
+            var model = new PlotModel { Title = "时程曲线" };
+
+            //var ls = new LineSeries
+            //{
+            //    StrokeThickness = .25,
+            //};
+            var ls = new LineSeries();
+
+
+            for (int i = 0; i < items.Count; i++)
+            {
+                ls.Points.Add(new DataPoint(DateTimeAxis.ToDouble(items[i].MonitorTime), Convert.ToSingle(items[i].StrainValue)));        
+            }
+            ls.DataFieldX = "11,12,13,14";
+
+            model.Series.Add(ls);
+            return model;
         }
 
         public Chart SinglePointTimeHistoryChart

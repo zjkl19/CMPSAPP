@@ -4,7 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             
              xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             
              x:Class="CMPSAPP.Views.StrainMonitorsChartPage"
              xmlns:vm="clr-namespace:CMPSAPP.ViewModels">
 
@@ -13,14 +16,16 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="单点时程曲线"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <microcharts:ChartView 
+        <StackLayout  Padding="0, 50, 0, 0">
+            <oxy:PlotView Model="{Binding LineModel}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                HeightRequest="200"
+                   />
+            <!--<microcharts:ChartView 
                 x:Name="chartView"
                 Chart="{Binding SinglePointTimeHistoryChart}"
-                HeightRequest="200" />
+                HeightRequest="200" />-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
