@@ -27,8 +27,6 @@ namespace CMPSAPP.ViewModels
         public List<StrainMonitorsChart> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public IEnumerable<Entry> Entries;
-
         RestClient client;
         RestRequest request;
 
@@ -36,41 +34,7 @@ namespace CMPSAPP.ViewModels
         {
             Title = "时程曲线";
 
-            //Entries = new[]
-            // {
-            //     new Entry(212)
-            //     {
-            //         Label = "S1",
-            //         ValueLabel = "212",
-            //         Color = SKColor.Parse("#2c3e50")
-            //     },
-            //     new Entry(248)
-            //     {
-            //         Label = "S2",
-            //         ValueLabel = "248",
-            //         Color = SKColor.Parse("#77d065")
-            //     },
-            //     new Entry(128)
-            //     {
-            //         Label = "S3",
-            //         ValueLabel = "128",
-            //         Color = SKColor.Parse("#b455b6")
-            //     },
-            //     new Entry(256)
-            //     {
-            //         Label = "S4",
-            //         ValueLabel = "256",
-            //         Color = SKColor.Parse("#b455b6")
-            //     },
-            //     new Entry(514)
-            //     {
-            //         Label = "S5",
-            //         ValueLabel = "514",
-            //         Color = SKColor.Parse("#3498db")
-            //} };
-
-            //var chart = new LineChart() { Entries = Entries };
-
+            
         }
 
         public StrainMonitorsChartViewModel(Guid Id)
@@ -111,20 +75,6 @@ namespace CMPSAPP.ViewModels
             //Items = new ObservableCollection<StrainMonitorsChart>();
             //LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand(Id));
 
-            var lst = new List<Entry>();
-
-            for (int i = 0; i < Items.Count; i++)
-            {
-                lst.Add(new Entry(Convert.ToSingle(Items[i].StrainValue))
-                {
-                    //Label = Items[i].MonitorTime.ToString("u"),
-                    Label = Convert.ToString(i+1),
-                    ValueLabel = Items[i].StrainValue.ToString(),
-                    Color = SKColor.Parse("#2c3e50")
-                });
-            }
-
-            Entries = lst.AsQueryable();
 
             LineModel = CreateLineChart(Items);
 
@@ -175,18 +125,6 @@ namespace CMPSAPP.ViewModels
 
             model.Series.Add(ls);
             return model;
-        }
-
-        public Chart SinglePointTimeHistoryChart
-        {
-            get
-            {
-
-                return new LineChart() {
-                    LabelTextSize = 30f,
-                    //LabelOrientation = Microcharts.Orientation.Vertical,
-                    Entries = Entries };
-            }
         }
 
         async Task ExecuteLoadItemsCommand(Guid Id)
