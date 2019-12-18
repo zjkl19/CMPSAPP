@@ -22,17 +22,19 @@
         <StackLayout>
             <ff:CachedImage Source="resource://CMPSAPP.jkyLogo.jpg">
             </ff:CachedImage>
-            
+            <WebView Source="http://218.66.5.89:8310/Procedure/Details/17f25c0f-b97d-4337-9eee-8c8a01356c29"
+         VerticalOptions="FillAndExpand" 
+                     HeightRequest="600"/>
             
             <!--AbsoluteLayout.LayoutBounds="20,0,.9,.9"-->
             <!--AbsoluteLayout.LayoutFlags="WidthProportional,HeightProportional"-->
-            <AbsoluteLayout>
+            <!--<AbsoluteLayout>
                 <oxy:PlotView Model="{Binding PieModel}" 
 
                   
 HeightRequest="200"
                    />
-            </AbsoluteLayout>
+            </AbsoluteLayout>-->
             <!--<ff:CachedImage Source="http://218.66.5.89:8310/upload/image/20190714/6369873896757111911122189.png">
             </ff:CachedImage>-->
             <microcharts:ChartView 

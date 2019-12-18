@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              
-             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
              
              x:Class="CMPSAPP.Views.StrainMonitorsChartPage"
@@ -20,12 +19,8 @@
             <oxy:PlotView Model="{Binding LineModel}"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                HeightRequest="200"
+                HeightRequest="300"
                    />
-            <!--<microcharts:ChartView 
-                x:Name="chartView"
-                Chart="{Binding SinglePointTimeHistoryChart}"
-                HeightRequest="200" />-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

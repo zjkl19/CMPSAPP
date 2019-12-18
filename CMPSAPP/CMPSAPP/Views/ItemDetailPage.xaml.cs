@@ -36,6 +36,14 @@ namespace CMPSAPP.Views
             BindingContext = viewModel;
         }
 
+        async void OnProcedureButton_Clicked(object sender, EventArgs e)
+        {
+
+            var thisClickedButton = sender as Button;
+            var cmprojectId = (Guid)thisClickedButton.CommandParameter;
+            await Navigation.PushAsync(new ProcedurePage(new ProcedureViewModel(cmprojectId)));
+        }
+
         async void OnStrainMonitorButton_Clicked(object sender, EventArgs e)
         {
 

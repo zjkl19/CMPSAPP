@@ -13,7 +13,7 @@
 
     <ContentPage.Content>
         <StackLayout Padding="0, 50, 0, 0">
-            <ListView x:Name="StrainMonitorsListView"
+            <ListView x:Name="CoordinateMonitorsListView"
                       ItemsSource="{Binding Items}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="true"

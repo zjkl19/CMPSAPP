@@ -83,12 +83,10 @@ namespace CMPSAPP.ViewModels
                 Position = AxisPosition.Left,
                 Title = "应变",//显示标题内容
                 //TitlePosition = 1,//显示标题位置
-
             };
 
             var bottomAxis = new DateTimeAxis()
             {
-
                 Position = AxisPosition.Bottom,
                 StringFormat = "yyyy-MM-dd hh:mm",
                 //Minimum = DateTimeAxis.ToDouble(DateTime.Now),
@@ -114,7 +112,7 @@ namespace CMPSAPP.ViewModels
             //{
             //    StrokeThickness = .25,
             //};
-            var ls = new LineSeries();
+            var ls = new LineSeries { Smooth = true };
 
 
             for (int i = 0; i < items.Count; i++)
