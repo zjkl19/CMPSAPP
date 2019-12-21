@@ -5,14 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CMPSAPP.Views.ProcedureDetailPage">
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout>
             <WebView
                 Source="http://192.168.1.107/Procedure/Details/17f25c0f-b97d-4337-9eee-8c8a01356c29"
          VerticalOptions="FillAndExpand" 
                      HeightRequest="600"/>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 </ContentPage>
     
     

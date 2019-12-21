@@ -19,7 +19,7 @@ namespace CMPSAPP.ViewModels
         {
             Title = item?.Name;
             Procedure = item;
-            SurveyPointURL = $"http://192.168.1.107/Procedure/Details/{Id.ToString()}";
+            SurveyPointURL = $"{App.ServerURL}Procedure/APIDetails/{Id.ToString()}";
         }
     }
 }

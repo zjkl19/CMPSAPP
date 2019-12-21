@@ -23,7 +23,7 @@ namespace CMPSAPP.Views
 
             WebView webView = new WebView
             {
-                
+
                 Source = new UrlWebViewSource
                 {
                     Url = viewModel.SurveyPointURL,
@@ -34,9 +34,9 @@ namespace CMPSAPP.Views
             Content = new StackLayout
             {
                 Children =
-            {
-                webView
-            }
+                {
+                    webView
+                }
             };
         }
 
