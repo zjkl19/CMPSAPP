@@ -1,4 +1,5 @@
-﻿using CMPSAPP.ViewModels;
+﻿using CMPSAPP.Models;
+using CMPSAPP.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,15 @@ namespace CMPSAPP.Views
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+        }
+
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            var item = args.SelectedItem as CoordinateMonitor;
+            if (item == null)
+                return;
+            await Navigation.PushAsync(new CoordinateMonitorsChartPage(new CoordinateMonitorsChartViewModel(item.Id)));
+
         }
     }
 }
