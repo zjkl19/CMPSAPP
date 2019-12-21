@@ -98,6 +98,7 @@ namespace CMPSAPP.ViewModels
                 IntervalType = DateTimeIntervalType.Seconds,
                 MajorGridlineStyle = LineStyle.Solid,
                 MinorGridlineStyle = LineStyle.None,
+                Angle = -45,
             };
             LineModel.Axes.Add(leftAxis);
             LineModel.Axes.Add(bottomAxis);
@@ -112,7 +113,7 @@ namespace CMPSAPP.ViewModels
             //{
             //    StrokeThickness = .25,
             //};
-            var ls = new LineSeries { Smooth = true };
+            var ls = new LineSeries { MarkerType=MarkerType.Circle, Smooth = true };
 
 
             for (int i = 0; i < items.Count; i++)
