@@ -69,5 +69,10 @@ namespace CMPSAPP.Services
         {
             return await Task.FromResult(GetCableForceMonitorsDataByCMProjectId(cmprojectId));
         }
+
+        public async Task<IEnumerable<CableForceMonitor>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

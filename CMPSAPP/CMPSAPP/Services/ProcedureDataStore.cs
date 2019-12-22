@@ -78,5 +78,10 @@ namespace CMPSAPP.Services
             return await Task.FromResult(GetProcedureDataByCMProjectId(cmprojectId));
            
         }
+
+        public async Task<IEnumerable<Procedure>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

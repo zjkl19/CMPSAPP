@@ -69,5 +69,10 @@ namespace CMPSAPP.Services
         {
             return await Task.FromResult(GetCoordinateMonitorsDataByCMProjectId(cmprojectId));
         }
+
+        public async Task<IEnumerable<CoordinateMonitor>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

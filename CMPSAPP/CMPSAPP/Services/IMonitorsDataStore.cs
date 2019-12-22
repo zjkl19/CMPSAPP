@@ -9,5 +9,6 @@ namespace CMPSAPP.Services
     {
         Task<T> GetItemAsync(Guid id);
         Task<IEnumerable<T>> GetItemsAsync(Guid cmprojectId, bool forceRefresh = false);
+        Task<IEnumerable<T>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false);
     }
 }

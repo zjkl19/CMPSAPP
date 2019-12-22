@@ -69,5 +69,10 @@ namespace CMPSAPP.Services
         {
             return await Task.FromResult(GetElevationMonitorsDataByCMProjectId(cmprojectId));
         }
+
+        public async Task<IEnumerable<ElevationMonitor>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

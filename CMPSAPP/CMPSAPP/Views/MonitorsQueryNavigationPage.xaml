@@ -5,15 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
-             x:Class="CMPSAPP.Views.MonitorsQueryNavigationPage">
+             x:Class="CMPSAPP.Views.MonitorsQueryNavigationPage"
+             Title="查询">
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Text:" FontSize="Medium" />
             <Label Text="测点编号" d:Text="测点编号" FontSize="Small"/>
             <Entry Placeholder="支持模糊查询"
+                   Text="{Binding MonitorsQueryViewModel.No}"
                     VerticalOptions="CenterAndExpand" />
             <Label Text="起始日期" d:Text="起始日期" FontSize="Small"/>
-            <DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}">
+            <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding MonitorsQueryViewModel.StartDateTime}">
                 <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
                 <!--<DatePicker.MinimumDate>
                     <sys:DateTime x:FactoryMethod="Parse">
@@ -31,12 +33,13 @@
                 </DatePicker.MaximumDate>-->
             </DatePicker>
             <Label Text="终止日期" d:Text="终止日期" FontSize="Small"/>
-            <DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}">
+            <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding MonitorsQueryViewModel.EndDateTime}">
                 <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
             </DatePicker>
 
             <Button Margin="0,10,0,0" Text="查询"
-                        
+                        Clicked="OnStrainMonitorQueryButton_Clicked"
+                        CommandParameter="{Binding MonitorsQueryViewModel}"                        
                         BackgroundColor="CadetBlue"
                         TextColor="White" />
         </StackLayout>

@@ -62,6 +62,44 @@ namespace CMPSAPP.Services
             return items;
         }
 
+        public List<StrainMonitor> GetStrainMonitorsData(Guid Id, string No, DateTime? StartDateTime, DateTime? EndDateTime)
+        {
+            try
+            {
+                client = new RestClient(App.ServerURL);
+                request = new RestRequest("api/StrainMonitorQuery", Method.GET);
+                request.AddParameter("CMProjectId", Id);
+                request.AddParameter("No", No);
+                request.AddParameter("StartDateTime", StartDateTime);
+                request.AddParameter("EndDateTime", EndDateTime);
+                var resp = client.Execute(request);
+                if (resp.StatusCode == HttpStatusCode.OK)
+                {
+                    var v = resp.Content;
+                    items = JsonConvert.DeserializeObject<List<StrainMonitor>>(v);
+                }
+                else
+                {
+                    items = new List<StrainMonitor>()
+                    {
+                        new StrainMonitor { Id = Guid.NewGuid(), No="TS11mock",StrainValue=Convert.ToDecimal(129.11),Temperature=Convert.ToDecimal(20.01) },
+                        new StrainMonitor { Id = Guid.NewGuid(), No="TS12mock",StrainValue=Convert.ToDecimal(132.11),Temperature=Convert.ToDecimal(21.32) },
+                    };
+                }
+
+            }
+            catch (Exception)
+            {
+
+                items = new List<StrainMonitor>()
+                {
+                        new StrainMonitor { Id = Guid.NewGuid(), No="TS11throw",StrainValue=Convert.ToDecimal(129.11),Temperature=Convert.ToDecimal(20.01) },
+                        new StrainMonitor { Id = Guid.NewGuid(), No="TS12throw",StrainValue=Convert.ToDecimal(132.11),Temperature=Convert.ToDecimal(21.32) },
+                };
+            }
+            return items;
+        }
+
         public async Task<StrainMonitor> GetItemAsync(Guid id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
@@ -72,11 +110,18 @@ namespace CMPSAPP.Services
             return await Task.FromResult(items);
         }
 
-        public async Task<IEnumerable<StrainMonitor>> GetItemsAsync(Guid cmprojectId,bool forceRefresh = false)
+        public async Task<IEnumerable<StrainMonitor>> GetItemsAsync(Guid cmprojectId, bool forceRefresh = false)
         {
             //return await Task.FromResult(items);
             return await Task.FromResult(GetStrainMonitorsDataByCMProjectId(cmprojectId));
-           
+
+        }
+
+        public async Task<IEnumerable<StrainMonitor>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false)
+        {
+            //return await Task.FromResult(items);
+            return await Task.FromResult(GetStrainMonitorsData(cmprojectId, No, StartDateTime, EndDateTime));
+
         }
     }
 }

@@ -79,5 +79,10 @@ namespace CMPSAPP.Services
             return await Task.FromResult(GetStrainMonitorsChartDataById(Id));
            
         }
+
+        public async Task<IEnumerable<StrainMonitorsChart>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
