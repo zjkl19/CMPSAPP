@@ -33,24 +33,31 @@
                         TextColor="White" />
 
         <StackLayout Spacing="20" Padding="5" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
-            <Button Margin="0,10,0,0" Text="应变（快速）"
+            <Button Margin="0,10,0,0" Text="应变（快速查看）"
                         Clicked="OnStrainMonitorButton_Clicked"
                         CommandParameter="{Binding Item.Id}"
                         BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" 
-                        Grid.Row="0" Grid.Column="0"/>
-            <Button Margin="0,10,0,0" Text="应变（详细）"
+                        TextColor="White"/>
+            <Button Margin="0,10,0,0" Text="应变（详细查看）"
                         Clicked="OnStrainMonitorQueryNavigationButton_Clicked"
                         CommandParameter="{Binding Item.Id}"
                         BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" 
-                        Grid.Row="0" Grid.Column="1"/>
+                        TextColor="White"/>
         </StackLayout>
-        <Button Margin="0,10,0,0" Text="坐标"
+
+        <StackLayout Spacing="20" Padding="5" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+            <Button Margin="0,10,0,0" Text="坐标（快速查看）"
                         Clicked="OnCoordinateMonitorButton_Clicked"
                         CommandParameter="{Binding Item.Id}"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
+            <Button Margin="0,10,0,0" Text="坐标（详细查看）"
+                        Clicked="OnCoordinateMonitorQueryNavigationButton_Clicked"
+                        CommandParameter="{Binding Item.Id}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+        </StackLayout>
+
         <Button Margin="0,10,0,0" Text="高程"
                         Clicked="OnElevationMonitorButton_Clicked"
                         CommandParameter="{Binding Item.Id}"

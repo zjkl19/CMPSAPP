@@ -60,6 +60,36 @@ namespace CMPSAPP.Services
             return items;
         }
 
+        public List<CoordinateMonitor> GetCoordinateMonitorsData(Guid Id, string No, DateTime? StartDateTime, DateTime? EndDateTime)
+        {
+            try
+            {
+                client = new RestClient(App.ServerURL);
+                request = new RestRequest("api/CoordinateMonitorQuery", Method.GET);
+                request.AddParameter("CMProjectId", Id);
+                request.AddParameter("No", No);
+                request.AddParameter("StartDateTime", StartDateTime);
+                request.AddParameter("EndDateTime", EndDateTime);
+                var resp = client.Execute(request);
+                if (resp.StatusCode == HttpStatusCode.OK)
+                {
+                    var v = resp.Content;
+                    items = JsonConvert.DeserializeObject<List<CoordinateMonitor>>(v);
+                }
+                else
+                {
+                    items = null;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                items = null;
+            }
+            return items;
+        }
+
         public async Task<CoordinateMonitor> GetItemAsync(Guid id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
@@ -72,7 +102,8 @@ namespace CMPSAPP.Services
 
         public async Task<IEnumerable<CoordinateMonitor>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false)
         {
-            throw new NotImplementedException();
+
+            return await Task.FromResult(GetCoordinateMonitorsData(cmprojectId, No, StartDateTime, EndDateTime));
         }
     }
 }

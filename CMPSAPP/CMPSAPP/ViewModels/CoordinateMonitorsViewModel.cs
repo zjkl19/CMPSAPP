@@ -43,6 +43,13 @@ namespace CMPSAPP.ViewModels
             //});
         }
 
+        public CoordinateMonitorsViewModel(Guid Id, string No, DateTime? StartDateTime, DateTime? EndDateTime)
+        {
+            Title = "查看坐标";
+            Items = new ObservableCollection<CoordinateMonitor>();
+            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand(Id, No, StartDateTime, EndDateTime));
+
+        }
         async Task ExecuteLoadItemsCommand(Guid Id)
         {
             if (IsBusy)
@@ -54,6 +61,32 @@ namespace CMPSAPP.ViewModels
             {
                 Items.Clear();
                 var items = await DataStore.GetItemsAsync(Id,true);
+                foreach (var item in items)
+                {
+                    Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        async Task ExecuteLoadItemsCommand(Guid Id, string No, DateTime? StartDateTime, DateTime? EndDateTime)
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+                Items.Clear();
+                var items = await DataStore.GetItemsAsync(Id, No, StartDateTime, EndDateTime, true);
                 foreach (var item in items)
                 {
                     Items.Add(item);

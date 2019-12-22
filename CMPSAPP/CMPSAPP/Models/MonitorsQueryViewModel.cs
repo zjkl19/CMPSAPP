@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CMPSAPP.ViewModels
+namespace CMPSAPP.Models
 {
-    public class MonitorsQueryViewModel
+    public class MonitorsQuery
     {
         public Guid Id { get; set; }
         public string No { get; set; }

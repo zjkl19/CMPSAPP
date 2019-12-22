@@ -54,11 +54,20 @@ namespace CMPSAPP.Views
 
         async void OnStrainMonitorQueryNavigationButton_Clicked(object sender, EventArgs e)
         {
-
             var thisClickedButton = sender as Button;
             var cmprojectId = (Guid)thisClickedButton.CommandParameter;
             await Navigation.PushAsync(new MonitorsQueryNavigationPage(
-                new MonitorsQueryNavigationViewModel(new MonitorsQueryViewModel { Id=cmprojectId})
+                new MonitorsQueryNavigationViewModel(new MonitorsQuery { Id=cmprojectId}), 1
+                ));
+        }
+
+        async void OnCoordinateMonitorQueryNavigationButton_Clicked(object sender, EventArgs e)
+        {
+            var thisClickedButton = sender as Button;
+
+            var cmprojectId = (Guid)thisClickedButton.CommandParameter;
+            await Navigation.PushAsync(new MonitorsQueryNavigationPage(
+                new MonitorsQueryNavigationViewModel(new MonitorsQuery { Id = cmprojectId }), 2
                 ));
         }
 
