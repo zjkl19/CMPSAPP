@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace CMPSAPP.ViewModels
 {
-    public class ProcedureViewModel : MonitorsBaseViewModel<Procedure>
+    public class ProcedureViewModel : CommonDataBaseViewModel<Procedure>
     {
         public ObservableCollection<Procedure> Items { get; set; }
         public Command LoadItemsCommand { get; set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CMPSAPP.Services
 {
-    public class ProcedureDataStore : IMonitorsDataStore<Procedure>
+    public class ProcedureDataStore : ICommonDataStore<Procedure>
     {
         List<Procedure> items;
 
@@ -79,9 +79,6 @@ namespace CMPSAPP.Services
            
         }
 
-        public async Task<IEnumerable<Procedure>> GetItemsAsync(Guid cmprojectId, string No, DateTime? StartDateTime, DateTime? EndDateTime, bool forceRefresh = false)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
