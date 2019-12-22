@@ -18,18 +18,15 @@
         <ScrollView>
             <StackLayout  Padding="0, 50, 0, 0">
                 <oxy:PlotView Model="{Binding LineModelX}"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
+                VerticalOptions="Fill" HorizontalOptions="Fill"
                 HeightRequest="300"
                    />
                 <oxy:PlotView Model="{Binding LineModelY}"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
+                VerticalOptions="Fill" HorizontalOptions="Fill"
                 HeightRequest="300"
                    />
                 <oxy:PlotView Model="{Binding LineModelZ}"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
+                VerticalOptions="Fill" HorizontalOptions="Fill"
                 HeightRequest="300"
                    />
             </StackLayout>

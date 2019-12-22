@@ -17,8 +17,7 @@
     <ContentPage.Content>
         <StackLayout  Padding="0, 50, 0, 0">
             <oxy:PlotView Model="{Binding LineModel}"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
+                VerticalOptions="Fill" HorizontalOptions="Fill"
                 HeightRequest="300"
                    />
         </StackLayout>
